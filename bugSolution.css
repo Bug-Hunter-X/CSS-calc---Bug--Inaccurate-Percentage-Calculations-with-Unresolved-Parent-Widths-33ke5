@@ -1,0 +1,15 @@
+To fix this, ensure that parent container widths are explicitly defined using fixed units (like pixels or ems) before calculating child element widths using percentages.  Or refactor the CSS to avoid nested percentage calculations.
+
+For instance, if possible, change the parent's width to a fixed value:
+
+```css
+.parent {
+  width: 500px; /* Or a fixed value in other units */
+}
+
+.child {
+  width: calc(50% + 20px);
+}
+```
+
+Alternatively, adjust the calculation to avoid percentage-based parent dependency if refactoring is possible.
